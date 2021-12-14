@@ -45,6 +45,8 @@ class Debugger(object):
       self.names = coco_class_name
     elif num_classes == 20 or dataset == 'pascal':
       self.names = pascal_class_name
+    elif dataset == 'crowdhuman':
+      self.names = crowdhuman_class_name
     elif dataset == 'gta':
       self.names = gta_class_name
       self.focal_length = 935.3074360871937
@@ -79,7 +81,7 @@ class Debugger(object):
       bg * (1 - trans)).astype(np.uint8)
   
   def show_img(self, pause = False, imgId = 'default'):
-    cv2.imshow('{}'.format(imgId), self.imgs[imgId])
+    cv2.imshow('{}'.format(imgId), self.imgs[imgId])   
     if pause:
       cv2.waitKey()
   
@@ -213,9 +215,9 @@ class Debugger(object):
                    3, (int(c[0]), int(c[1]), int(c[2])), -1)
 
   def show_all_imgs(self, pause=False, time=0):
-    if not self.ipynb:
+    if not self.ipynb:          
       for i, v in self.imgs.items():
-        cv2.imshow('{}'.format(i), v)
+        cv2.imshow('{}'.format(i), v)     
       if cv2.waitKey(0 if pause else 1) == 27:
         import sys
         sys.exit(0)
@@ -455,6 +457,8 @@ coco_class_name = [
      'oven', 'toaster', 'sink', 'refrigerator', 'book', 'clock', 'vase',
      'scissors', 'teddy bear', 'hair drier', 'toothbrush'
 ]
+
+crowdhuman_class_name = ['person']
 
 color_list = np.array(
         [
