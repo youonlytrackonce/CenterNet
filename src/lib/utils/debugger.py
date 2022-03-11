@@ -47,6 +47,8 @@ class Debugger(object):
       self.names = pascal_class_name
     elif dataset == 'crowdhuman':
       self.names = ch_class_name
+    elif dataset == 'trackeveryseason':
+      self.names = trackeveryseason_class_name     
     elif dataset == 'gta':
       self.names = gta_class_name
       self.focal_length = 935.3074360871937
@@ -459,6 +461,8 @@ coco_class_name = [
 ]
 
 ch_class_name = ['person']
+
+trackeveryseason_class_name = ['person']
 
 color_list = np.array(
         [
