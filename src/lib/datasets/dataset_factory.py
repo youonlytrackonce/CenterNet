@@ -12,14 +12,15 @@ from .dataset.pascal import PascalVOC
 from .dataset.kitti import KITTI
 from .dataset.coco_hp import COCOHP
 from .dataset.crowdhuman import CrowdHuman
-
+from .dataset.trackeveryseason import TrackEverySeason
 
 dataset_factory = {
   'coco': COCO,
   'pascal': PascalVOC,
   'kitti': KITTI,
   'coco_hp': COCOHP,
-  'crowdhuman': CrowdHuman
+  'crowdhuman': CrowdHuman,
+  'trackeveryseason': TrackEverySeason
 }
 
 _sample_factory = {
